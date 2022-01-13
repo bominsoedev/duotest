@@ -33,6 +33,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
+
                         <li class="nav-item dropdown">
                             <a class="nav-link  dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Manage Post
@@ -45,6 +46,10 @@
                                     <a href="{{ route('post.index') }}" class="dropdown-item {{ request()->url() == route('post.index') ? 'active' : '' }}" >Post List</a>
                                 </li>
                             </ul>
+
+                        <li class="nav-item">
+                            <a href="{{ route('category.create') }}" class="nav-link">Category</a>
+
                         </li>
                     </ul>
 
