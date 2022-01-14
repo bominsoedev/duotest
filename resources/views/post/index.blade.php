@@ -64,25 +64,19 @@
                                     <td>
                                         <div class="btn-group">
                                             <a class="btn btn-sm btn-outline-primary" href="{{ route('post.show',$post->id) }}">
-                                                <i class="fas fa-info fa-fw"></i>
+                                              See More  <i class="fas fa-info fa-fw"></i>
                                             </a>
-                                            @can('view',$post)
-                                                <a class="btn btn-sm btn-outline-primary" href="{{ route('post.edit',$post->id) }}">
-                                                    <i class="fas fa-pencil-alt fa-fw"></i>
+                                                <a class="btn btn-sm btn-outline-warning" href="{{ route('post.edit',$post->id) }}">
+                                                   Edit <i class="fas fa-pencil-alt fa-fw"></i>
                                                 </a>
-                                            @endcan
-                                            @can('delete',$post)
-                                                <button form="deletePost{{$post->id}}" class="btn btn-sm btn-outline-primary">
-                                                    <i class="fas fa-trash-alt fa-fw"></i>
+                                                <button form="deletePost{{$post->id}}" class="btn btn-sm btn-outline-danger">
+                                                  Delete  <i class="fas fa-trash-alt fa-fw"></i>
                                                 </button>
-                                            @endcan
                                         </div>
-                                        @can('delete',$post)
                                             <form action="{{ route('post.destroy',$post->id) }}" id="deletePost{{ $post->id }}" method="post" class="d-none">
                                                 @csrf
                                                 @method('delete')
                                             </form>
-                                        @endcan
                                     </td>
                                     <td>
                                         {!! $post->show_created_at !!}

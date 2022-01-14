@@ -67,17 +67,6 @@
 
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-header">Manage Photo</div>
-                    <div class="card-body">
-                        <form action="{{ route('photo.store') }}" method="post" enctype="multipart/form-data" id="uploaderForm" class="d-none">
-                            @csrf
-                            <input type="hidden" value="{{ $post->id }}" name="post_id">
-                            <input type="file" name="photo[]" accept="image/jpeg,image/png" class="form-control" id="uploaderInput" multiple>
-                            <button class="btn btn-primary">Upload</button>
-                        </form>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
